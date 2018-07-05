@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenLocal()
         jcenter()
     }
     dependencies {
@@ -22,6 +23,7 @@ mainClassName = 'bisq.seednode.SeedNodeMain'
 sourceSets.main.resources.srcDirs += ['src/main/java'] // to copy fxml and css files
 
 repositories {
+    mavenLocal()
     jcenter()
     maven { url "https://jitpack.io" }
     maven { url 'https://raw.githubusercontent.com/JesusMcCloud/tor-binary/master/release/' }
@@ -31,7 +33,7 @@ dependencies {
     compile 'network.bisq:bisq-core:-SNAPSHOT'
     runtime 'org.bouncycastle:bcprov-jdk15on:1.56'
     compileOnly 'org.projectlombok:lombok:1.16.16'
-    annotationProcessor 'org.projectlombok:lombok:1.16.16'
+    // annotationProcessor 'org.projectlombok:lombok:1.16.16'
 }
 
 build.dependsOn installDist
